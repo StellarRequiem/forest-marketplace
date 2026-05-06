@@ -1,0 +1,14 @@
+# Forest Marketplace canonical index.
+#
+# schema_version 1: entries are listed by reference. Each `entry` is a
+# relative path from this file to the per-plugin YAML. The kernel
+# resolves and inlines them at fetch time. This keeps the index small
+# and lets per-entry diffs stay legible in PRs.
+#
+# Decision recorded in docs/manifest-schema.md.
+
+schema_version: 1
+
+entries:
+  - id: soulux-computer-control
+    entry: entries/soulux-computer-control.yaml

@@ -1,0 +1,33 @@
+id: soulux-computer-control
+name: Soulux Computer Control
+version: "0.1.0"
+author: forest-team
+source_url: https://github.com/StellarRequiem/soulux-computer-control
+download_url: https://github.com/StellarRequiem/soulux-computer-control/releases/download/v0.1.0/soulux-computer-control.plugin
+download_sha256: PLACEHOLDER_FILL_AT_RELEASE
+manifest_signature: null   # M6 will populate
+description: |
+  Drive the operator's macOS desktop via Anthropic's computer-use protocol.
+  Read clipboard, click, type, launch URLs, take screenshots.
+contributes:
+  tools:
+    - {name: computer_screenshot, version: "1", side_effects: read_only}
+    - {name: computer_read_clipboard, version: "1", side_effects: read_only}
+    - {name: computer_click, version: "1", side_effects: external}
+    - {name: computer_type, version: "1", side_effects: external}
+    - {name: computer_run_app, version: "1", side_effects: external}
+    - {name: computer_launch_url, version: "1", side_effects: network}
+  skills: []
+  mcp_servers: []
+archetype_tags: [companion, assistant]
+highest_side_effect_tier: external
+required_secrets: []
+minimum_kernel_version: "v0.6"
+permissions_summary: |
+  This plugin can SEE your screen and CONTROL your mouse and keyboard.
+  Grant only to agents you trust to act on your behalf. Default posture
+  clamps tighten this — see ADR-0048 in the Forest-Soul-Forge repo.
+reviewed_by:
+  - reviewer: forest-team
+    date: 2026-05-04
+    verdict: approved
